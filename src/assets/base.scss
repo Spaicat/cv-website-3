@@ -1,0 +1,188 @@
+@import "./normalize.scss";
+
+:root {
+	--color-background: #201F23;
+	--color-background-2: #2A292D;
+	--color-background-3: #424144;
+
+	--color-font: #FFFFFF;
+	--color-font-2: #ADADAD;
+
+	--color-primary: #0CF29F;
+	--color-primary-2: #06b776;
+	--color-secondary: #bb00e5;
+
+	--section-gap: 160px;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-Thin.ttf");
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-ExtraLight.ttf");
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-Light.ttf");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-Regular.ttf");
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-Medium.ttf");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-SemiBold.ttf");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-Bold.ttf");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-ExtraBold.ttf");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/inter/Inter-Black.ttf");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-Thin.ttf");
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-ThinItalic.ttf");
+	font-weight: 100;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-ExtraLight.ttf");
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-ExtraLightItalic.ttf");
+	font-weight: 200;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-Light.ttf");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-LightItalic.ttf");
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-Regular.ttf");
+	font-style: normal;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-Italic.ttf");
+	font-style: italic;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-Medium.ttf");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-MediumItalic.ttf");
+	font-weight: 500;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-Bold.ttf");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-BoldItalic.ttf");
+	font-weight: bold;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-ExtraBold.ttf");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-ExtraBoldItalic.ttf");
+	font-weight: 800;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-Black.ttf");
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url("/fonts/jetbrains_mono/JetBrainsMono-BlackItalic.ttf");
+	font-weight: 900;
+	font-style: italic;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	position: relative;
+	font-weight: normal;
+}
+
+body {
+	min-height: 100vh;
+	color: var(--color-font);
+	fill: var(--color-font);
+	background: var(--color-background);
+	transition: color 0.5s, background-color 0.5s;
+	line-height: 1.6;
+	font-size: 16px;
+	font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
