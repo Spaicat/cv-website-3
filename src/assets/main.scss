@@ -17,3 +17,23 @@ a {
 		color: var(--color-primary-2);
 	}
 }
+
+strong {
+	color: var(--color-primary);
+}
+
+.button {
+	cursor: pointer;
+	padding: 0.75rem 1.2rem;
+	border-radius: 5px;
+	background-color: var(--color-primary);
+	color: var(--color-background);
+	transition: all 0.2s ease-in-out;
+	span {
+		font-weight: 600;
+	}
+	&:hover {
+		transform: translateY(-5px);
+		color: var(--color-background);
+	}
+}

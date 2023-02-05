@@ -27,6 +27,7 @@ const props = defineProps<{
 	&__title {
 		font-size: 24px;
 		font-weight: 900;
+		text-align: center;
 		span {
 			font-weight: 900;
 			color: var(--color-primary);

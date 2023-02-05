@@ -4,11 +4,22 @@
 <template>
 	<div class="home__container">
 		<div class="box-left">
-			<h1 class="home__title">Thibault <br /> Trembleau</h1>
-			<h2 class="home__subtitle">Etudiant en informatique</h2>
+			<h1 class="home__title">
+				Thibault <br />
+				Trembleau
+			</h1>
+			<h2 class="home__subtitle">Etudiant en Master Informatique</h2>
 			<p>
-				Etudiant en 3ème année de licence informatique, je suis à la recherche d'un travail de 2 à 4 mois entre Mai et Août 2022
+				Etudiant en 1er année de master informatique, je suis à la recherche d'une alternance pour l'année 2023-2024.
 			</p>
+			<div class="home__btns">
+				<a class="button" href="#">
+					<span>Me contacter</span>
+				</a>
+				<a class="button" href="#">
+					<span>Mon CV</span>
+				</a>
+			</div>
 		</div>
 		<div class="box-right"></div>
 	</div>
@@ -30,11 +41,6 @@
 			-ms-grid-row: 2;
 			grid-row: 2;
 		}
-		p {
-			max-width: 700px;
-			margin: 40px 0;
-			color: var(--color-font-2);
-		}
 	}
 
 	&__title {
@@ -42,7 +48,7 @@
 		font-weight: 900;
 		line-height: 1.1;
 		margin-top: 0;
-		margin-bottom: 14px;
+		margin-bottom: 10px;
 		color: var(--color-font);
 		br {
 			display: none;
@@ -53,6 +59,18 @@
 		font-size: 20px;
 		font-weight: 200;
 		color: var(--color-primary);
+	}
+	p {
+		max-width: 700px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		color: var(--color-font-2);
+	}
+	&__btns {
+		display: flex;
+		.button {
+			margin-right: 15px;
+		}
 	}
 }
 @media (min-width: 700px) {
