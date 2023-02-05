@@ -172,12 +172,12 @@
 	font-weight: normal;
 }
 
+html,
 body {
 	min-height: 100vh;
 	color: var(--color-font);
 	fill: var(--color-font);
 	background: var(--color-background);
-	transition: color 0.5s, background-color 0.5s;
 	line-height: 1.6;
 	font-size: 16px;
 	font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -185,4 +185,5 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
 }

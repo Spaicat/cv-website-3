@@ -65,6 +65,7 @@ function toggleMenu() {
 	flex-direction: column;
 	width: 100%;
 	background-color: var(--color-background-2);
+	font-size: 14px;
 	&__wrapper {
 		position: relative;
 		display: flex;
@@ -74,12 +75,14 @@ function toggleMenu() {
 		list-style: none;
 	}
 
-	$logo-height: 50px;
+	$logo-height: 25px;
+	$logo-margin: 0.75rem;
 	.hamburger {
+		cursor: pointer;
 		position: absolute;
 		top: 0;
 		right: 0;
-		margin: 1rem;
+		margin: $logo-margin;
 		padding: 0;
 		height: $logo-height;
 		background: none;
@@ -92,16 +95,11 @@ function toggleMenu() {
 	&__logo {
 		display: inline-flex;
 		align-self: flex-start;
-		padding: 1rem;
+		padding: $logo-margin;
 		.logo {
 			height: $logo-height;
 			min-height: $logo-height;
 		}
-	}
-	&__main {
-		display: flex;
-		flex-direction: column;
-		margin: auto 0;
 	}
 	&__menu {
 		display: flex;
@@ -114,12 +112,18 @@ function toggleMenu() {
 			max-height: 500px;
 		}
 	}
+	&__main {
+		display: flex;
+		flex-direction: column;
+		margin: auto 0;
+		margin-top: 0.5rem;
+	}
 
 	.item {
 		display: flex;
 		margin-bottom: 0.25rem;
 
-		$margin-link: 0.6rem;
+		$margin-link: 1rem;
 		.link {
 			position: relative;
 			display: flex;
@@ -160,7 +164,7 @@ function toggleMenu() {
 				height: $size-bullet;
 			}
 			span {
-				transform: translateX($margin-link + $size-bullet);
+				transform: translateX(0.6rem + $size-bullet);
 			}
 		}
 	}
@@ -174,6 +178,7 @@ function toggleMenu() {
 			flex-direction: row;
 			max-height: inherit;
 		}
+		&__main,
 		.item {
 			margin: 0;
 		}

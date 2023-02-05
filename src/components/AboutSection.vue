@@ -2,8 +2,8 @@
 </script>
 
 <template>
-	<div>
-		<h2>À propos de moi.</h2>
+	<div class="about_container">
+		<h2 class="section__title">À propos de <span>moi.</span></h2>
 	</div>
 </template>
 

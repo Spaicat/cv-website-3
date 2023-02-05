@@ -14,5 +14,3 @@ import FooterBar from "./components/FooterBar.vue";
 	<FooterBar />
 </template>
 
-<style lang="scss" scoped>
-</style>
