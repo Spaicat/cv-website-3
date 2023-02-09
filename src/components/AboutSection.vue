@@ -99,7 +99,7 @@ const getAge = computed(() => {
 		background-color: var(--color-background-2);
 		border-radius: 10px;
 		font-size: 12px;
-		font-family: "JetBrains Mono", monospace;
+		font-family: var(--font-secondary);
 	}
 }
 

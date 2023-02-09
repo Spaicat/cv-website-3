@@ -13,6 +13,10 @@
 	--color-secondary: #bb00e5;
 
 	--section-gap: 160px;
+
+	--font-primary: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	--font-secondary: 'Jetbrains Mono', monospace;
 }
 
 @font-face {
@@ -180,10 +184,11 @@ body {
 	background: var(--color-background);
 	line-height: 1.6;
 	font-size: 16px;
-	font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-		Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 400;
+	font-family: var(--font-primary);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	scroll-behavior: smooth;
+	font-smoothing: antialiased;
 }
