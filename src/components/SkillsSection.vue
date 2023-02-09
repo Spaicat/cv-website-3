@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const categories = [
+import { ref, computed } from "vue";
+
+interface Category {
+	id: string;
+	title: string;
+}
+
+const categories: Category[] = [
 	{
 		id: "web",
 		title: "Web",
@@ -18,9 +25,24 @@ const categories = [
 	},
 ];
 
-const skills = [
+interface Skill {
+	title: string;
+	categoryId: string;
+	icon: string;
+	colorIcon: string;
+	colorBackground: string;
+}
+
+const skills: Skill[] = [
 	{
-		title: "Javascript",
+		title: "HTML/CSS",
+		categoryId: "web",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "Sass",
 		categoryId: "web",
 		icon: "icon-dev",
 		colorIcon: "#323330",
@@ -34,48 +56,166 @@ const skills = [
 		colorBackground: "#F0DB4F",
 	},
 	{
-		title: "Javascript",
+		title: "Typescript",
 		categoryId: "web",
 		icon: "icon-dev",
 		colorIcon: "#323330",
 		colorBackground: "#F0DB4F",
 	},
 	{
-		title: "Javascript",
+		title: "React.js",
 		categoryId: "web",
 		icon: "icon-dev",
 		colorIcon: "#323330",
 		colorBackground: "#F0DB4F",
 	},
 	{
-		title: "Javascript",
+		title: "Next.js",
 		categoryId: "web",
 		icon: "icon-dev",
 		colorIcon: "#323330",
 		colorBackground: "#F0DB4F",
 	},
 	{
-		title: "Javascript",
+		title: "Vue.js",
 		categoryId: "web",
 		icon: "icon-dev",
 		colorIcon: "#323330",
 		colorBackground: "#F0DB4F",
 	},
 	{
-		title: "Javascript",
+		title: "Svelte.js",
 		categoryId: "web",
 		icon: "icon-dev",
 		colorIcon: "#323330",
 		colorBackground: "#F0DB4F",
 	},
 	{
-		title: "Javascript",
+		title: "Node.js",
 		categoryId: "web",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "C#",
+		categoryId: "software",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "C/C++",
+		categoryId: "software",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "Java",
+		categoryId: "software",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "Python",
+		categoryId: "software",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "MySQL",
+		categoryId: "db",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "PostgreSQL",
+		categoryId: "db",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "PL/SQL",
+		categoryId: "db",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "MongoDB",
+		categoryId: "db",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "Adobe Photoshop",
+		categoryId: "design",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "Adobe Illustrator",
+		categoryId: "design",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "Adobe Premiere Pro",
+		categoryId: "design",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "Adobe XD",
+		categoryId: "design",
+		icon: "icon-dev",
+		colorIcon: "#323330",
+		colorBackground: "#F0DB4F",
+	},
+	{
+		title: "Figma",
+		categoryId: "design",
 		icon: "icon-dev",
 		colorIcon: "#323330",
 		colorBackground: "#F0DB4F",
 	},
 ];
+
+class SkillsGroup {
+	id: string;
+	skills: Skill[];
+
+	constructor(id: string) {
+		this.id = id;
+		this.skills = [];
+	}
+}
+
+const skillsByCategory = computed(() =>
+	skills.reduce((memo: SkillsGroup[], obj: Skill) => {
+		let objKey: string = obj.categoryId;
+		let group: SkillsGroup | undefined = memo.find((x) => x.id === objKey);
+		if (!group) memo.push(new SkillsGroup(objKey));
+		group?.skills.push(obj);
+		return memo;
+	}, [])
+);
+
+const categoryOpened = ref("web");
+
+function handleCategory(id: string) {
+	categoryOpened.value = id;
+}
+
 </script>
 
 <template>
@@ -85,10 +225,13 @@ const skills = [
 			<div class="skills__header">
 				<ul class="menu">
 					<li
-						v-for="(category, index) in categories"
+						v-for="category in categories"
 						class="menu__item"
-						:class="[index === 0 ? 'active' : '']"
+						:class="[
+							category.id === categoryOpened ? 'active' : '',
+						]"
 						:key="category.id"
+						@click="handleCategory(category.id)"
 					>
 						{{ category.title }}
 					</li>
@@ -99,10 +242,16 @@ const skills = [
 					<div class="top-btn"></div>
 				</div>
 			</div>
-			<div class="skills__content">
+			<div
+				v-for="category in skillsByCategory"
+				class="skills__content"
+				:class="[category.id === categoryOpened ? 'active' : '']"
+				:id="'category-' + category.id"
+				:key="category.id"
+			>
 				<li
 					class="skills__item"
-					v-for="skill in skills"
+					v-for="skill in category.skills"
 					:key="skill.title"
 				>
 					<div class="skills__item--icon">
@@ -142,6 +291,7 @@ const skills = [
 			padding: 0;
 			margin: 0;
 			.menu__item {
+				cursor: pointer;
 				color: var(--color-font);
 				margin-right: 10px;
 				padding: 5px 15px;
@@ -167,12 +317,12 @@ const skills = [
 		}
 	}
 	&__content {
-		display: grid;
+		display: none;
 		$minWidth: 150px;
 		$maxColumns: 5;
 		$gap: 10px;
 		grid-template-columns: repeat(
-			auto-fit,
+			auto-fill,
 			minmax(
 				max($minWidth, (100% - ($gap * $maxColumns)) / $maxColumns),
 				1fr
@@ -181,12 +331,16 @@ const skills = [
 		grid-gap: $gap;
 		padding: 20px;
 		width: 100%;
+		&.active {
+			display: grid;
+		}
 		.skills__item {
 			@include flex-center;
 			flex-direction: column;
 			background-color: var(--color-background-2);
 			border-radius: 10px;
 			padding: 20px;
+			word-break: break-word;
 			&--icon {
 				@include flex-center;
 				flex-direction: row;
