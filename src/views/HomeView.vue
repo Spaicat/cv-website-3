@@ -3,6 +3,7 @@ import SectionLayout from "@/components/SectionLayout.vue";
 import HomeSection from "@/components/HomeSection.vue";
 import AboutSection from "@/components/AboutSection.vue";
 import SkillsSection from "@/components/SkillsSection.vue";
+import ProjectsSection from "@/components/ProjectsSection.vue";
 </script>
 
 <template>
@@ -14,6 +15,9 @@ import SkillsSection from "@/components/SkillsSection.vue";
 	</SectionLayout>
 	<SectionLayout id="skills">
 		<SkillsSection />
+	</SectionLayout>
+	<SectionLayout id="projects">
+		<ProjectsSection />
 	</SectionLayout>
 </template>
 
