@@ -238,6 +238,7 @@ const bigProjects = projects.filter(
 </template>
 
 <style lang="scss" scoped>
+@import "../src/assets/functions.scss";
 .projects {
 	&__layout {
 		display: flex;
@@ -255,18 +256,10 @@ const bigProjects = projects.filter(
 			margin-bottom: 70px;
 		}
 		&.small {
-			display: grid;
 			$minWidth: 350px;
 			$maxColumns: 3;
 			$gap: 30px;
-			grid-template-columns: repeat(
-				auto-fill,
-				minmax(
-					max($minWidth, (100% - ($gap * $maxColumns)) / $maxColumns),
-					1fr
-				)
-			);
-			grid-gap: $gap;
+			@include dynamic-grid($minWidth, $maxColumns, $gap);
 		}
 	}
 	&__item {

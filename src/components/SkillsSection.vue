@@ -265,6 +265,7 @@ function handleCategory(id: string) {
 </template>
 
 <style lang="scss" scoped>
+@import "../src/assets/functions.scss";
 @mixin flex-center {
 	display: flex;
 	align-items: center;
@@ -317,18 +318,11 @@ function handleCategory(id: string) {
 		}
 	}
 	&__content {
-		display: none;
 		$minWidth: 150px;
 		$maxColumns: 5;
 		$gap: 10px;
-		grid-template-columns: repeat(
-			auto-fill,
-			minmax(
-				max($minWidth, (100% - ($gap * $maxColumns)) / $maxColumns),
-				1fr
-			)
-		);
-		grid-gap: $gap;
+		@include dynamic-grid($minWidth, $maxColumns, $gap);
+		display: none;
 		padding: 20px;
 		width: 100%;
 		&.active {

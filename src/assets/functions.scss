@@ -1,0 +1,17 @@
+@mixin dynamic-grid($minWidth, $maxColumns, $gap) {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(
+			min(
+				100%,
+				max(
+					$minWidth,
+					(100% - ($gap * $maxColumns)) / $maxColumns
+				)
+			),
+			1fr
+		)
+	);
+	grid-gap: $gap;
+}

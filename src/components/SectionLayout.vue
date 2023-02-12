@@ -34,6 +34,10 @@ const props = defineProps<{
 			color: var(--color-primary);
 		}
 	}
+	&__subtitle {
+		color: var(--color-font-2);
+		font-family: var(--font-secondary);
+	}
 }
 
 @media (min-width: 700px) {
