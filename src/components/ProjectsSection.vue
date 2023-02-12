@@ -374,6 +374,7 @@ const bigProjects = projects.filter(
 			flex-direction: column;
 			padding: 30px;
 			background-color: var(--color-background-2);
+			border: 1px solid var(--color-background-3);
 			.icon__wrapper {
 				display: flex;
 				align-items: center;

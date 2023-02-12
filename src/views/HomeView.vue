@@ -5,6 +5,7 @@ import AboutSection from "@/components/AboutSection.vue";
 import SkillsSection from "@/components/SkillsSection.vue";
 import ProjectsSection from "@/components/ProjectsSection.vue";
 import ExperiencesSection from "@/components/ExperiencesSection.vue";
+import ContactSection from "@/components/ContactSection.vue";
 </script>
 
 <template>
@@ -22,6 +23,9 @@ import ExperiencesSection from "@/components/ExperiencesSection.vue";
 	</SectionLayout>
 	<SectionLayout id="experiences">
 		<ExperiencesSection />
+	</SectionLayout>
+	<SectionLayout id="contact">
+		<ContactSection />
 	</SectionLayout>
 </template>
 

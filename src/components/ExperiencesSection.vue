@@ -76,6 +76,7 @@ const experiences: Experience[] = [
 		width: 100%;
 		max-width: 1070px;
 		background-color: var(--color-background-2);
+		border: 1px solid var(--color-background-3);
 		.details {
 			display: flex;
 			flex-direction: column;
