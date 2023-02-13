@@ -91,5 +91,7 @@ const contactHovered = ref(-1);
 }
 svg {
 	fill: var(--color-font);
+	width: 100%;
+	max-width: 135px;
 }
 </style>
