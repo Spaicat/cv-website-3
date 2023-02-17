@@ -15,6 +15,39 @@ const isMenuOpen = ref(false);
 function toggleMenu() {
 	isMenuOpen.value = !isMenuOpen.value;
 }
+
+// Active menu element on the corresponding section when scrolling
+function getPosY(elt: Element) {
+	return window.scrollY + elt.getBoundingClientRect().top;
+}
+
+function handleScroll() {
+	let scrollPos = window.scrollY;
+	let eltList = Array.from(document.querySelectorAll(`.header__main .item`));
+	eltList.forEach((elt) => {
+		let child = elt.querySelector(":scope > a");
+		if (child === null) return;
+		let href = child.getAttribute("href");
+		if (href === null) return;
+		let refElt = document.querySelector(href);
+		if (refElt === null) return;
+
+		if (
+			getPosY(refElt) - 300 <= scrollPos &&
+			getPosY(refElt) + refElt.clientHeight > scrollPos
+		) {
+			if (!elt.classList.contains("active")) {
+				eltList.forEach((elt) => elt.classList.remove("active"));
+				elt.classList.add("active");
+			}
+		}
+		else {
+			elt.classList.remove("active");
+		}
+	});
+}
+
+window.addEventListener("scroll", handleScroll);
 </script>
 
 <template>
