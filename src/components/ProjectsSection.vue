@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import bkecoImage from "@/assets/projects/bkeco_mockup.png";
+import patrimoineImage from "@/assets/projects/patrimoine_mockup.png";
+import movieRecommandationImage from "@/assets/projects/movie_recommandation.png";
+import pathMazeVisualizerImage from "@/assets/projects/path_maze_visualizer.png";
 import PlayIcon from "./icons/PlayIcon.vue";
 import GithubIcon from "./icons/GithubIcon.vue";
 
@@ -31,11 +35,46 @@ interface SmallProject extends Project {
 const projects: (BigProject | SmallProject)[] = [
 	{
 		type: "BIG",
+		title: "Pathfinder et génération de labyrinthe",
+		date: "2022",
+		category: "Projet personnel",
+		image: {
+			src: pathMazeVisualizerImage,
+			alt: "Visualisation du pathfinding et de la génération de labyrinthe",
+		},
+		nbGroup: 1,
+		description:
+			"Site internet pour visualiser différents algorithmes de génération de labyrinthes et de pathfinding pour les résoudre.",
+		technologies: ["HTML/CSS", "JS"],
+		links: {
+			run: "https://spaicat.github.io/Pathfinding/",
+			github: "https://github.com/Spaicat/Pathfinding",
+		},
+	},
+	{
+		type: "BIG",
+		title: "Application de recommandation de films",
+		date: "Mars 2022 - Mai 2022",
+		category: "Projet d'école",
+		image: {
+			src: movieRecommandationImage,
+			alt: "Application de recommandation de films.",
+		},
+		nbGroup: 3,
+		description:
+			"Application pour recommander des films selon les actions de l'utilisateur, avec un côté interface utilisateur et un côté serveur pour les algorithmes de recommandation.",
+		technologies: ["HTML", "Sass", "JS", "Vue.js", "Electron", "Python"],
+		links: {
+			github: "https://github.com/PreslavPO/Recommandation-de-contenu",
+		},
+	},
+	{
+		type: "BIG",
 		title: "Site présentation de commerce",
 		date: "Avril 2021 - Mai 2021",
 		category: "Projet personnel",
 		image: {
-			src: "bkeco_mockup.png",
+			src: bkecoImage,
 			alt: "projet présentation commerce",
 		},
 		nbGroup: 1,
@@ -48,30 +87,27 @@ const projects: (BigProject | SmallProject)[] = [
 	},
 	{
 		type: "BIG",
-		title: "Carnet de santé en ligne",
-		date: "Février 2021 - Avril 2021",
-		category: "Projet d'école",
-		image: {
-			src: "carnet_sante_mockup.png",
-			alt: "projet carnet de santé en ligne",
-		},
-		nbGroup: 6,
-		description: "",
-		technologies: ["HTML/CSS", "JS", "Node.js", "React.js", "MongoDB"],
-	},
-	{
-		type: "BIG",
 		title: "Digitalisation patrimoine historique",
 		date: "Octobre 2020 - Janvier 2021",
 		category: "Projet d'école",
 		image: {
-			src: "patrimoine_mockup.png",
+			src: patrimoineImage,
 			alt: "projet digitalisation patrimoine historique",
 		},
 		nbGroup: 8,
 		description:
 			"Le but de ce projet était de créer un outil pour aider des médiévistes dans leur étude des dons des Ducs de France au XVème siècle.\r\n\n Nous avons réalisé une base de données pour remplacer leur Excel, un outil pour transférer le contenu de cet Excel dans la base de données et surtout un site internet sur lequel une fois connecté, ils peuvent ajouter, supprimer et modifier un don et voir une représentation des données sous plusieurs formes utiles à l’analyse : Une restitution sous forme de texte triée par bénéficiaire, une carte des lieux de dons et un calendrier qui trie les dons par date",
 		technologies: ["HTML/CSS", "JS", "PHP", "SQL", "Python"],
+	},
+	{
+		type: "SMALL",
+		title: "Carnet de santé en ligne",
+		date: "Février 2021 - Avril 2021",
+		category: "Projet d'école",
+		icon: GithubIcon,
+		nbGroup: 6,
+		description: "",
+		technologies: ["HTML/CSS", "JS", "Node.js", "React.js", "MongoDB"],
 	},
 	{
 		type: "SMALL",
@@ -107,13 +143,6 @@ const projects: (BigProject | SmallProject)[] = [
 		technologies: ["C# (Moteur Unity3D)", "HTML/CSS", "PHP"],
 	},
 ];
-
-// Replace src image by the path of the image
-projects.forEach((project) => {
-	if (project.type === "BIG") {
-		project.image.src = `/src/assets/projects/${project.image.src}`;
-	}
-});
 
 const smallProjects = projects.filter(
 	(x: BigProject | SmallProject): x is SmallProject => x.type === "SMALL"
