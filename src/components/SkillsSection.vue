@@ -1,5 +1,29 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
+import HTMLCSSLogo from "./icons/skills/HTMLCSSLogo.vue";
+import JSLogo from "./icons/skills/JSLogo.vue";
+import SassLogo from "./icons/skills/SassLogo.vue";
+import PHPLogo from "./icons/skills/PHPLogo.vue";
+import TypescriptLogo from "./icons/skills/TypescriptLogo.vue";
+import ReactLogo from "./icons/skills/ReactLogo.vue";
+import NextLogo from "./icons/skills/NextLogo.vue";
+import VueLogo from "./icons/skills/VueLogo.vue";
+import NodeLogo from "./icons/skills/NodeLogo.vue";
+import SvelteLogo from "./icons/skills/SvelteLogo.vue";
+import CSharpLogo from "./icons/skills/CSharpLogo.vue";
+import CppLogo from "./icons/skills/CppLogo.vue";
+import CLogo from "./icons/skills/CLogo.vue";
+import PythonLogo from "./icons/skills/PythonLogo.vue";
+import JavaLogo from "./icons/skills/JavaLogo.vue";
+import MySqlLogo from "./icons/skills/MySqlLogo.vue";
+import PostgreSqlLogo from "./icons/skills/PostgreSqlLogo.vue";
+import PLSqlLogo from "./icons/skills/PLSqlLogo.vue";
+import MongoDBLogo from "./icons/skills/MongoDBLogo.vue";
+import PhotoshopLogo from "./icons/skills/PhotoshopLogo.vue";
+import IllustratorLogo from "./icons/skills/IllustratorLogo.vue";
+import PremiereProLogo from "./icons/skills/PremiereProLogo.vue";
+import XDLogo from "./icons/skills/XDLogo.vue";
+import FigmaLogo from "./icons/skills/FigmaLogo.vue";
 
 interface Category {
 	id: string;
@@ -28,7 +52,7 @@ const categories: Category[] = [
 interface Skill {
 	title: string;
 	categoryId: string;
-	icon: string;
+	icon: string | object;
 	colorIcon: string;
 	colorBackground: string;
 }
@@ -37,156 +61,170 @@ const skills: Skill[] = [
 	{
 		title: "HTML/CSS",
 		categoryId: "web",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: HTMLCSSLogo,
+		colorIcon: "white",
+		colorBackground: "#f06529",
 	},
 	{
 		title: "Sass",
 		categoryId: "web",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: SassLogo,
+		colorIcon: "white",
+		colorBackground: "#CD6799",
+	},
+	{
+		title: "PHP",
+		categoryId: "web",
+		icon: PHPLogo,
+		colorIcon: "white",
+		colorBackground: "#787cb4",
 	},
 	{
 		title: "Javascript",
 		categoryId: "web",
-		icon: "icon-dev",
+		icon: JSLogo,
 		colorIcon: "#323330",
 		colorBackground: "#F0DB4F",
 	},
 	{
 		title: "Typescript",
 		categoryId: "web",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: TypescriptLogo,
+		colorIcon: "white",
+		colorBackground: "#3178c6",
 	},
 	{
 		title: "React.js",
 		categoryId: "web",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: ReactLogo,
+		colorIcon: "#1c2c4c",
+		colorBackground: "#61DBFB",
 	},
 	{
 		title: "Next.js",
 		categoryId: "web",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: NextLogo,
+		colorIcon: "white",
+		colorBackground: "black",
 	},
 	{
 		title: "Vue.js",
 		categoryId: "web",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: VueLogo,
+		colorIcon: "white",
+		colorBackground: "#42b883",
 	},
 	{
 		title: "Svelte.js",
 		categoryId: "web",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: SvelteLogo,
+		colorIcon: "white",
+		colorBackground: "#ff3c00",
 	},
 	{
 		title: "Node.js",
 		categoryId: "web",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: NodeLogo,
+		colorIcon: "white",
+		colorBackground: "#68a063",
 	},
 	{
 		title: "C#",
 		categoryId: "software",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: CSharpLogo,
+		colorIcon: "white",
+		colorBackground: "#a179dc",
 	},
 	{
-		title: "C/C++",
+		title: "C",
 		categoryId: "software",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: CLogo,
+		colorIcon: "white",
+		colorBackground: "#5f98cf",
+	},
+	{
+		title: "C++",
+		categoryId: "software",
+		icon: CppLogo,
+		colorIcon: "white",
+		colorBackground: "#5f98cf",
 	},
 	{
 		title: "Java",
 		categoryId: "software",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: JavaLogo,
+		colorIcon: "white",
+		colorBackground: "#ec2024",
 	},
 	{
 		title: "Python",
 		categoryId: "software",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: PythonLogo,
+		colorIcon: "white",
+		colorBackground: "#306998",
 	},
 	{
 		title: "MySQL",
 		categoryId: "db",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: MySqlLogo,
+		colorIcon: "white",
+		colorBackground: "#00618a",
 	},
 	{
 		title: "PostgreSQL",
 		categoryId: "db",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: PostgreSqlLogo,
+		colorIcon: "white",
+		colorBackground: "#2f6792",
 	},
 	{
 		title: "PL/SQL",
 		categoryId: "db",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: PLSqlLogo,
+		colorIcon: "white",
+		colorBackground: "#f80000",
 	},
 	{
 		title: "MongoDB",
 		categoryId: "db",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: MongoDBLogo,
+		colorIcon: "white",
+		colorBackground: "#3fa037",
 	},
 	{
 		title: "Adobe Photoshop",
 		categoryId: "design",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: PhotoshopLogo,
+		colorIcon: "#30a8ff",
+		colorBackground: "#001e36",
 	},
 	{
 		title: "Adobe Illustrator",
 		categoryId: "design",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: IllustratorLogo,
+		colorIcon: "#fe9900",
+		colorBackground: "#340000",
 	},
 	{
 		title: "Adobe Premiere Pro",
 		categoryId: "design",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: PremiereProLogo,
+		colorIcon: "#d473f6",
+		colorBackground: "#252654",
 	},
 	{
 		title: "Adobe XD",
 		categoryId: "design",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: XDLogo,
+		colorIcon: "#ff61f6",
+		colorBackground: "#470137",
 	},
 	{
 		title: "Figma",
 		categoryId: "design",
-		icon: "icon-dev",
-		colorIcon: "#323330",
-		colorBackground: "#F0DB4F",
+		icon: FigmaLogo,
+		colorIcon: "white",
+		colorBackground: "#ff3a00",
 	},
 ];
 
@@ -204,7 +242,11 @@ const skillsByCategory = computed(() =>
 	skills.reduce((memo: SkillsGroup[], obj: Skill) => {
 		let objKey: string = obj.categoryId;
 		let group: SkillsGroup | undefined = memo.find((x) => x.id === objKey);
-		if (!group) memo.push(new SkillsGroup(objKey));
+
+		if (!group) {
+			group = new SkillsGroup(objKey);
+			memo.push(group);
+		}
 		group?.skills.push(obj);
 		return memo;
 	}, [])
@@ -215,7 +257,6 @@ const categoryOpened = ref("web");
 function handleCategory(id: string) {
 	categoryOpened.value = id;
 }
-
 </script>
 
 <template>
@@ -254,8 +295,15 @@ function handleCategory(id: string) {
 					v-for="skill in category.skills"
 					:key="skill.title"
 				>
-					<div class="skills__item--icon">
-						<!-- Add svg -->
+					<div
+						class="skills__item--icon"
+						:style="{
+							'background-color': skill.colorBackground,
+							fill: skill.colorIcon,
+							stroke: skill.colorIcon,
+						}"
+					>
+						<component :is="skill.icon" />
 					</div>
 					<span class="skills__item--title">{{ skill.title }}</span>
 				</li>
@@ -338,6 +386,7 @@ function handleCategory(id: string) {
 			&--icon {
 				@include flex-center;
 				flex-direction: row;
+				padding: 15px;
 				width: 90px;
 				height: 90px;
 				border-radius: 50%;
