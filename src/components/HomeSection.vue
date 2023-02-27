@@ -10,13 +10,18 @@
 			</h1>
 			<h2 class="home__subtitle">Etudiant en Master Informatique</h2>
 			<p>
-				Etudiant en 1er année de master informatique, je suis à la recherche d'une alternance pour l'année 2023-2024.
+				Etudiant en 1ère année de master informatique, je suis à la recherche d'une alternance pour l'année 2023-2024.
 			</p>
 			<div class="home__btns">
-				<a class="button" href="#">
+				<a class="button" href="#contact">
 					<span>Me contacter</span>
 				</a>
-				<a class="button" href="#">
+				<a
+					class="button"
+					href="/download/CV.pdf"
+					target="_blank"
+					download
+				>
 					<span>Mon CV</span>
 				</a>
 			</div>

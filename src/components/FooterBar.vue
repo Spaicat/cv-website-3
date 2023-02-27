@@ -2,7 +2,12 @@
 
 <template>
 	<footer class="footer">
-		<span>Site réalisé avec Vue.js et sass</span>
+		<span>
+			Site réalisé avec
+			<a target="_blank" href="https://vuejs.org">Vue.js</a>,
+			<a target="_blank" href="https://www.typescriptlang.org">Typescript</a> et
+			<a target="_blank" href="https://sass-lang.com">Sass</a>
+		</span>
 		<span>©2023 Thibault Trembleau</span>
 	</footer>
 </template>

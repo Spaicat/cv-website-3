@@ -73,7 +73,12 @@ window.addEventListener("scroll", handleScroll);
 					</li>
 				</nav>
 				<li class="item">
-					<a class="link" href="#" target="_blank" download>
+					<a
+						class="link"
+						href="download/CV.pdf"
+						target="_blank"
+						download
+					>
 						<span>Télécharger CV</span>
 					</a>
 				</li>
@@ -186,6 +191,10 @@ window.addEventListener("scroll", handleScroll);
 			span {
 				transition: all 0.15s;
 			}
+		}
+		&:hover .link {
+			color: var(--color-font);
+			fill: var(--color-font);
 		}
 		&.active .link {
 			color: var(--color-font);

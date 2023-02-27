@@ -25,7 +25,7 @@ const props = defineProps<{
 		max-width: 1300px;
 	}
 	&__title {
-		font-size: 24px;
+		font-size: 28px;
 		font-weight: 900;
 		text-align: center;
 		word-break: break-word;

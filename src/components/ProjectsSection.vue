@@ -5,6 +5,9 @@ import movieRecommandationImage from "@/assets/projects/movie_recommandation.png
 import pathMazeVisualizerImage from "@/assets/projects/path_maze_visualizer.png";
 import PlayIcon from "./icons/PlayIcon.vue";
 import GithubIcon from "./icons/GithubIcon.vue";
+import MedicineIcon from "./icons/MedicineIcon.vue";
+import BusinessTimeIcon from "./icons/BusinessTimeIcon.vue";
+import GameControllerIcon from "./icons/GameControllerIcon.vue";
 
 interface Project {
 	title: string;
@@ -104,42 +107,38 @@ const projects: (BigProject | SmallProject)[] = [
 		title: "Carnet de santé en ligne",
 		date: "Février 2021 - Avril 2021",
 		category: "Projet d'école",
-		icon: GithubIcon,
+		icon: MedicineIcon,
 		nbGroup: 6,
-		description: "",
+		description:
+			"Ce projet avait pour objectif de créer un carnet de santé avec le résumé de ses informations comme le suivis des vaccins, les dons de sang, les maladies, les rappels de médicaments, les règles, les cycles de sommeil, etc...",
 		technologies: ["HTML/CSS", "JS", "Node.js", "React.js", "MongoDB"],
+		links: {
+			github: "https://github.com/SuzanFrogg/PtutS4_Santee",
+		},
 	},
 	{
 		type: "SMALL",
 		title: "Création d'un prologiciel",
 		date: "Octobre 2020 - Janvier 2021",
 		category: "Projet d'école",
-		icon: GithubIcon,
+		icon: BusinessTimeIcon,
 		nbGroup: 4,
 		description:
 			"Ce projet avait pour but de nous faire réaliser une application de gestion de projet pour une entreprise (l'entreprise était factice) afin de nous mettre dans le cadre d'une vraie demande de projet réalisé en entreprise.",
 		technologies: ["Java (Swing)", "SQL"],
-	},
-	{
-		type: "SMALL",
-		title: "Site web de présentation de l'IUT",
-		date: "Octobre 2019 - Janvier 2020",
-		category: "Projet d'école",
-		icon: GithubIcon,
-		nbGroup: 3,
-		description:
-			"Ce projet était un site internet ayant pour objectif de présenter l'IUT aux étudiants venant aux portes ouvertes de l'IUT. Ainsi de notre côté, nous avons décidé de s'orienter vers un style s'approchant de l'univers vidéoludique.",
-		technologies: ["HTML/CSS", "JS", "PHP"],
+		links: {
+			github: "https://github.com/Spaicat/IUT-S2-EasyTasks",
+		},
 	},
 	{
 		type: "SMALL",
 		title: "Jeu-vidéo avec Unity3D",
 		date: "Janvier 2019 - Juin 2019",
 		category: "Projet d'école",
-		icon: GithubIcon,
+		icon: GameControllerIcon,
 		nbGroup: 4,
 		description:
-			"Ce projet est un jeu vidéo que nous avons dû réaliser sur le moteur de jeu Unity3D. Nous avons donc créé tout le concept de celui-ci afin de pouvoir le coder.",
+			"Ce projet est un jeu vidéo que nous avons dû réaliser sur le moteur de jeu Unity3D. Nous avons donc créé tout le concept de celui-ci afin de pouvoir le coder. Cela reproduisait un jeu de plateau sur le thème de la mythologie.",
 		technologies: ["C# (Moteur Unity3D)", "HTML/CSS", "PHP"],
 	},
 ];
@@ -336,15 +335,18 @@ const bigProjects = projects.filter(
 				.title {
 					margin: 0;
 					font-weight: 700;
-					font-size: 28px;
+					font-size: 24px;
 					line-height: 1.4;
 					word-break: break-word;
 				}
 				.subtitle {
 					color: var(--color-primary);
-					.date::after {
-						content: " • ";
-					}
+				}
+				.date::after {
+					content: " • ";
+				}
+				.category {
+					font-weight: 600;
 				}
 			}
 		}
@@ -426,31 +428,28 @@ const bigProjects = projects.filter(
 }
 
 @media (min-width: 700px) {
-	.projects {
-		&__item {
-			&.big {
-				flex-direction: row;
-				.image {
-					width: 80%;
-					height: 100%;
-					max-height: 250px;
-				}
-				.details {
-					margin-top: 0;
-					margin-left: 50px;
-				}
+	.projects__item {
+		.header .title__container .title {
+			font-size: 28px;
+		}
+		&.big {
+			flex-direction: row;
+			.image {
+				width: 80%;
+				height: 100%;
+				max-height: 250px;
+			}
+			.details {
+				margin-top: 0;
+				margin-left: 50px;
 			}
 		}
 	}
 }
 
 @media (max-width: 350px) {
-	.projects__item {
-		&.big {
-			.image {
-				height: 200px;
-			}
-		}
+	.projects__item.big .image {
+		height: 200px;
 	}
 }
 </style>

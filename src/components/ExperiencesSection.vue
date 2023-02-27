@@ -10,13 +10,13 @@ const experiences: Experience[] = [
 		title: "Stage chez Inetum",
 		date: "Avril 2021 - Juin 2021 (3 mois)",
 		description:
-			"J'ai pu intégrer une équipe dans une entreprise d'Inetum situé à Lyon 5eme. Mon stage s'est déroulé dans le service application de celle-ci, j'ai ainsi pu rejoindre une équipe qui s'occupait exclusivement du projet sur lequel j'ai travaillé durant la période de mon stage. J'ai intégré une équipe de 6 personnes. Mon travail durant ces trois mois de stage a été de participer à la réalisation d'une application web pour gérer les sous-concessionnaire des différentes aires d'autoroute du réseau autoroutier d'APRR. Je devais réaliser le développement d’écran de saisie d’activité, de suivi, de tableau de bord ou encore de paramétrage.",
+			"J'ai pu intégrer une équipe dans une entreprise d'Inetum situé à Lyon 5eme. Mon stage s'est déroulé dans le service application de celle-ci, j'ai ainsi pu rejoindre une équipe qui s'occupait exclusivement du projet sur lequel j'ai travaillé durant la période de mon stage. J'ai intégré une équipe de 6 personnes. Mon travail durant ces trois mois de stage a été de participer à la réalisation d'une application web pour gérer les sous-concessionnaire des différentes aires d'autoroute du réseau autoroutier d'APRR. Je devais réaliser le développement d'écran de saisie d'activité, de suivi, de tableau de bord ou encore de paramétrage.",
 	},
 	{
 		title: "Stage chez Fiducial",
 		date: "Mai 2021 - Août 2022 (4 mois)",
 		description:
-			"J'ai pu intégrer une équipe dans une entreprise d'Inetum situé à Lyon 5eme. Mon stage s'est déroulé dans le service application de celle-ci, j'ai ainsi pu rejoindre une équipe qui s'occupait exclusivement du projet sur lequel j'ai travaillé durant la période de mon stage. J'ai intégré une équipe de 6 personnes. Mon travail durant ces trois mois de stage a été de participer à la réalisation d'une application web pour gérer les sous-concessionnaire des différentes aires d'autoroute du réseau autoroutier d'APRR. Je devais réaliser le développement d’écran de saisie d’activité, de suivi, de tableau de bord ou encore de paramétrage.",
+			"La mission principale de ce stage était de générer des fichiers d'écriture comptable à partir d'un volume de données conséquent. Ces fichiers avaient donc pour but d'être stocké dans une nouvelle base de données qui a pour but d'être exploité par la suite par des data scientist afin d'en tirer des informations. À côté de cela j'ai aussi été assigné plusieurs autres missions, moins importantes ce qui m'a permis d'être multitâche et de toucher à différents aspects de l'entreprise.",
 	}
 ]
 </script>
@@ -138,6 +138,18 @@ const experiences: Experience[] = [
 		&__header {
 			max-width: 350px;
 			margin-right: 20px;
+		}
+		&__list {
+			grid-gap: 10px;
+		}
+		&__item {
+			align-self: flex-start;
+			&:nth-child(odd) {
+				transform: rotate(-3deg);
+			}
+			&:nth-child(even) {
+				transform: rotate(3deg) translate(-5px, 30px);
+			}
 		}
 	}
 }
